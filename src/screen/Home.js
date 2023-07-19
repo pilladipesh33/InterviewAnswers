@@ -9,6 +9,7 @@ const Home = () => {
     <View style={styles.container}>
       <Text style={styles.headingText}>Today's Game</Text>
       <View style={styles.boxContainer}>
+        {/* TOP CONTENT */}
         <View style={styles.smallBoxContainer}>
           <View style={styles.boxHeadingContainer}>
             <Text style={styles.boxTitle}>
@@ -26,9 +27,29 @@ const Home = () => {
             </Text>
           </View>
           <View style={styles.boxBodyContent}>
-            <Text style={styles.boxBodyContentText}>Bitcoin price will be under</Text>
-            <Text style={styles.boxBodyContentText2}>$24,524 at 7 a ET on 22nd Jan'21</Text>
+            <Text style={styles.boxBodyContentText}>
+              Bitcoin price will be under
+            </Text>
+            <Text style={styles.boxBodyContentText2}>
+              $24,524 at 7 a ET on 22nd Jan'21
+            </Text>
           </View>
+        </View>
+        {/* MIDDLE CONTENT */}
+        <View style={{padding: '5%'}}>
+          <View style={styles.boxMiddleContent}>
+            <Text style={styles.boxMiddleContentText}>PRIZE POOL</Text>
+            <Text style={styles.boxMiddleContentText}>UNDER</Text>
+            <Text style={styles.boxMiddleContentText}>OVER</Text>
+            <Text style={styles.boxMiddleContentText}>ENTRY FEE</Text>
+          </View>
+          <View style={styles.boxMiddleContent}>
+            <Text style={styles.boxMiddleContentText2}>$12,000</Text>
+            <Text style={styles.boxMiddleContentText2}> 3.25x</Text>
+            <Text style={styles.boxMiddleContentText2}>1.25x </Text>
+            <Text style={styles.boxMiddleContentText2}>5</Text>
+          </View>
+          <Text style={{paddingTop: 10, color: Colors.DARK_GREY, fontSize: 17, fontWeight: '600'}}>What's your prediction?</Text>
         </View>
       </View>
     </View>
@@ -77,21 +98,36 @@ const styles = StyleSheet.create({
     lineHeight: 15,
   },
   boxBodyContent: {
-    paddingTop: 15
+    paddingTop: 15,
   },
   boxBodyContentText: {
     fontWeight: '600',
     fontSize: 14,
     lineHeight: 19,
-    color: Colors.LIGHT_PURPLE
+    color: Colors.LIGHT_PURPLE,
   },
   boxBodyContentText2: {
     color: Colors.WHITE,
     fontWeight: '700',
     fontSize: 14,
     lineHeight: 19,
-
-  }
+  },
+  boxMiddleContent: {
+    padding: '1%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  boxMiddleContentText: {
+    fontWeight: '500',
+    lineHeight: 14,
+    color: Colors.GREY,
+  },
+  boxMiddleContentText2: {
+    fontWeight: '600',
+    lineHeight: 19,
+    alignSelf: 'center',
+    color: Colors.BLACK,
+  },
 });
 
 export default Home;
