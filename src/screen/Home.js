@@ -3,8 +3,10 @@ import React from 'react';
 import {Colors} from '../constant/Color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import IconButton, {Button} from '../constant/Component';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import IconButton from '../constant/Component';
+import ColoredBar from '../constant/ColorBar';
+import ProgressBar from '../constant/ColorBar';
 
 const Home = () => {
   return (
@@ -75,10 +77,49 @@ const Home = () => {
             />
           </View>
         </View>
-          {/* BOTTOM CONTENT */}
+        {/* BOTTOM CONTENT */}
         <View style={styles.bottomContainer}>
-          <Text>355 Players</Text>
-          <Text>View chart</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              padding: 5,
+            }}>
+            <View style={styles.chartContainer}>
+              <Ionicons name="person" size={15} color={Colors.DARK_GREY} />
+              <Text style={styles.chartContainerText}> 355 Players</Text>
+            </View>
+            <View style={styles.chartContainer}>
+              <FontAwesome5
+                name="chart-area"
+                size={20}
+                color={Colors.DARK_GREY}
+              />
+              <Text style={styles.chartContainerText}> View chart</Text>
+            </View>
+          </View>
+          <View style={{}}>
+            <View style={styles.progressBar}>
+              <ProgressBar />
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingTop: 5,
+              }}>
+              <View style={styles.chartContainer}>
+                <Text style={styles.chartContainerText2}>
+                  232 predicted under
+                </Text>
+              </View>
+              <View style={styles.chartContainer}>
+                <Text style={styles.chartContainerText2}>
+                  123 predicted over
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -182,6 +223,26 @@ const styles = StyleSheet.create({
     height: 110,
     paddingTop: '5%',
   },
+  chartContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  chartContainerText: {
+    fontWeight: '600',
+    fontSize: 17,
+  },
+  progressBar: {
+    alignItems: 'center',
+    paddingTop: 10,
+  },
+  chartContainerText2: {
+    fontWeight: '500',
+    fontSize: 15,
+    lineHeight: 14,
+    color: Colors.GREY,
+    paddingTop: 5
+  }
 });
 
 export default Home;
