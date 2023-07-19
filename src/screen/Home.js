@@ -3,6 +3,8 @@ import React from 'react';
 import {Colors} from '../constant/Color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import IconButton, {Button} from '../constant/Component';
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 const Home = () => {
   return (
@@ -49,7 +51,29 @@ const Home = () => {
             <Text style={styles.boxMiddleContentText2}>1.25x </Text>
             <Text style={styles.boxMiddleContentText2}>5</Text>
           </View>
-          <Text style={{paddingTop: 10, color: Colors.DARK_GREY, fontSize: 17, fontWeight: '600'}}>What's your prediction?</Text>
+          <Text
+            style={{
+              paddingTop: 10,
+              color: Colors.DARK_GREY,
+              fontSize: 17,
+              fontWeight: '600',
+            }}>
+            What's your prediction?
+          </Text>
+          <View style={styles.buttonContainer}>
+            <IconButton 
+            title='Under'
+            iconName={'arrow-down'}
+            buttonStyle={styles.buttonDesign}
+            textStyle={styles.buttonText}
+            />
+            <IconButton 
+            title='Over'
+            iconName={'arrow-up'}
+            buttonStyle={styles.buttonDesign2}
+            textStyle={styles.buttonText}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -128,6 +152,26 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: Colors.BLACK,
   },
+  buttonDesign: {
+    width: 148,
+    borderRadius: 45,
+    backgroundColor: Colors.DARK_PURPLE
+  },
+  buttonDesign2: {
+    width: 148,
+    borderRadius: 45,
+    backgroundColor: Colors.BLUE
+  },
+  buttonText: {
+    fontWeight: '600',
+    fontSize: 17,
+    lineHeight: 17
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    paddingTop: '5%'
+  }
 });
 
 export default Home;
