@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {Colors} from '../constant/Color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -52,7 +52,13 @@ const Home = () => {
             <Text style={styles.boxMiddleContentText2}>$12,000</Text>
             <Text style={styles.boxMiddleContentText2}> 3.25x</Text>
             <Text style={styles.boxMiddleContentText2}>1.25x </Text>
-            <Text style={styles.boxMiddleContentText2}>5</Text>
+            <View style={styles.boxMiddleContentContainer}>
+              <Text style={styles.boxMiddleContentText2}>5   </Text>
+              <Image
+                source={require('../../assets/images/coin.png')}
+                style={styles.imageDesign}
+              />
+            </View>
           </View>
           <Text
             style={{
@@ -259,6 +265,15 @@ const styles = StyleSheet.create({
     color: Colors.GREY,
     paddingTop: 5,
   },
+  imageDesign: {
+    height: 13,
+    width: 13,
+  },
+  boxMiddleContentContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  }
 });
 
 export default Home;

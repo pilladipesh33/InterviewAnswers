@@ -5,6 +5,7 @@ import Research from '../screen/Research';
 import Leaderboard from '../screen/Leaderboard';
 import Profile from '../screen/Profile';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Colors } from '../constant/Color';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,8 +21,8 @@ function BottomTab() {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name={'home'} size={25} color={'#6231AD'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons name={'home'} size={25} color={focused ? Colors.BLUE : Colors.GREY } />
           ),
         }}
       />
@@ -29,8 +30,8 @@ function BottomTab() {
         name="Leagues"
         component={Leagues}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name={'trophy'} size={25} color={'#6231AD'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons name={'trophy'} size={25} color={focused ? Colors.BLUE : Colors.GREY} />
           ),
         }}
       />
@@ -38,8 +39,9 @@ function BottomTab() {
         name="Reasearch"
         component={Research}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name={'search'} size={25} color={'#6231AD'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons name={'search'} size={25} color={focused ? Colors.BLUE : Colors.GREY} />
+            
           ),
         }}
       />
@@ -47,8 +49,8 @@ function BottomTab() {
         name="Leaderboard"
         component={Leaderboard}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name={'podium'} size={25} color={'#6231AD'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons name={'podium'} size={25} color={focused ? Colors.BLUE : Colors.GREY} />
           ),
         }}
       />
@@ -56,8 +58,8 @@ function BottomTab() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name={'person'} size={25} color={'#6231AD'} />
+          tabBarIcon: ({focused}) => (
+            <Ionicons name={'person'} size={25} color={focused ? Colors.BLUE : Colors.GREY} />
           ),
         }}
       />
