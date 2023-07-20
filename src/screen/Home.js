@@ -1,12 +1,13 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {Colors} from '../constant/Color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IconButton from '../constant/Component';
-import ColoredBar from '../constant/ColorBar';
 import ProgressBar from '../constant/ColorBar';
+import RBSheet from '@nonam4/react-native-bottom-sheet';
+import BottomSheetCounter from '../constant/BottomSheetCounter';
 
 const Home = () => {
   return (
@@ -51,7 +52,13 @@ const Home = () => {
             <Text style={styles.boxMiddleContentText2}>$12,000</Text>
             <Text style={styles.boxMiddleContentText2}> 3.25x</Text>
             <Text style={styles.boxMiddleContentText2}>1.25x </Text>
-            <Text style={styles.boxMiddleContentText2}>5</Text>
+            <View style={styles.boxMiddleContentContainer}>
+              <Text style={styles.boxMiddleContentText2}>5   </Text>
+              <Image
+                source={require('../../assets/images/coin.png')}
+                style={styles.imageDesign}
+              />
+            </View>
           </View>
           <Text
             style={{
@@ -74,7 +81,22 @@ const Home = () => {
               iconName={'arrow-up'}
               buttonStyle={styles.buttonDesign2}
               textStyle={styles.buttonText}
+              onPress={() => this.RBSheet.open()}
             />
+            <RBSheet
+              ref={ref => {
+                this.RBSheet = ref;
+              }}
+              height={468}
+              openDuration={250}
+              customStyles={{
+                container: {
+                  borderTopRightRadius: 10,
+                  borderTopLeftRadius: 10,
+                },
+              }}>
+              <BottomSheetCounter />
+            </RBSheet>
           </View>
         </View>
         {/* BOTTOM CONTENT */}
@@ -226,7 +248,7 @@ const styles = StyleSheet.create({
   chartContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   chartContainerText: {
     fontWeight: '600',
@@ -241,7 +263,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 14,
     color: Colors.GREY,
-    paddingTop: 5
+    paddingTop: 5,
+  },
+  imageDesign: {
+    height: 13,
+    width: 13,
+  },
+  boxMiddleContentContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 });
 

@@ -11,4 +11,10 @@ export const Colors = {
     DARK_WHITE: '#F6F3FA',
     PINK: '#FE4190',
     GREEN: '#2DABAD',
+    GREY2: '#4F4F4F',
+    RED: '#F73232',
+    LIGHT_GREEN: '#48C547',
+    BLACK2: '#333333',
+    GOLD: '#FFA600',
+    DARK_GREEN: '#03A67F'
 }
