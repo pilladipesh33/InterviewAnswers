@@ -13,5 +13,7 @@ export const Colors = {
     GREEN: '#2DABAD',
     GREY2: '#4F4F4F',
     RED: '#F73232',
-    LIGHT_GREEN: '#48C547'
+    LIGHT_GREEN: '#48C547',
+    BLACK2: '#333333',
+    GOLD: '#FFA600',
 }

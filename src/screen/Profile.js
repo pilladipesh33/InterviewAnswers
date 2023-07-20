@@ -1,9 +1,10 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import {Colors} from '../constant/Color';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {ProfilePicture} from '../constant/ProfileEdit';
 import {BoxWithIcon} from '../constant/BoxWithIcon';
+import {TopTabNavigator} from '../navigation/topTabNavigation';
 
 const Profile = () => {
   return (
@@ -44,9 +45,11 @@ const Profile = () => {
           </Text>
         </View>
       </View>
-      <View style={{paddingTop: 40}}>
+      <View style={{paddingTop: 40, paddingBottom: 20}}>
         <BoxWithIcon />
       </View>
+      
+        <TopTabNavigator />
     </View>
   );
 };
