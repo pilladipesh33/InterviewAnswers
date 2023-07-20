@@ -16,4 +16,5 @@ export const Colors = {
     LIGHT_GREEN: '#48C547',
     BLACK2: '#333333',
     GOLD: '#FFA600',
+    DARK_GREEN: '#03A67F'
 }

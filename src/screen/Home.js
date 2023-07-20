@@ -5,8 +5,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IconButton from '../constant/Component';
-import ColoredBar from '../constant/ColorBar';
 import ProgressBar from '../constant/ColorBar';
+import RBSheet from '@nonam4/react-native-bottom-sheet';
+import BottomSheetCounter from '../constant/BottomSheetCounter';
 
 const Home = () => {
   return (
@@ -74,7 +75,22 @@ const Home = () => {
               iconName={'arrow-up'}
               buttonStyle={styles.buttonDesign2}
               textStyle={styles.buttonText}
+              onPress={() => this.RBSheet.open()}
             />
+            <RBSheet
+              ref={ref => {
+                this.RBSheet = ref;
+              }}
+              height={468}
+              openDuration={250}
+              customStyles={{
+                container: {
+                  borderTopRightRadius: 10,
+                  borderTopLeftRadius: 10,
+                },
+              }}>
+              <BottomSheetCounter />
+            </RBSheet>
           </View>
         </View>
         {/* BOTTOM CONTENT */}
@@ -226,7 +242,7 @@ const styles = StyleSheet.create({
   chartContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   chartContainerText: {
     fontWeight: '600',
@@ -241,8 +257,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 14,
     color: Colors.GREY,
-    paddingTop: 5
-  }
+    paddingTop: 5,
+  },
 });
 
 export default Home;
