@@ -1,9 +1,14 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import Home from './src/Home';
+import BottomTab from './src/navigation/bottomTab';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
-  return <Home />;
+  return (
+    <NavigationContainer>
+  <BottomTab />
+  </NavigationContainer>
+  );
 };
 
 export default App;
